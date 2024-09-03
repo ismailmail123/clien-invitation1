@@ -1,0 +1,10 @@
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: aquamarine;
+    border-radius: 35%;
+    width: 50%;
+    height: 10%;
+}
