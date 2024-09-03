@@ -8,8 +8,7 @@ module.exports = {
         "plugin:react/recommended",
         "prettier"
     ],
-    "overrides": [
-    ],
+    "overrides": [],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
@@ -20,6 +19,7 @@ module.exports = {
     "rules": {
         "no-unused-vars": 0,
         "react/prop-types": 0,
-        "no-unreachable": 0
+        "no-unreachable": 0,
+        "react/react-in-jsx-scope": 0
     }
 }

@@ -1,0 +1,37 @@
+.invitation-card {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.invitation-image {
+    border-radius: 50%;
+    width: 175px;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+}
+.invitation-text {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(8, 8, 95);
+}
+.invitation-button {
+    background-color: brown;
+    width: 200px;
+}
+
+@media (max-width: 576px) {
+    .invitation-image {
+        border-radius: 50%;
+        width: 150px;
+    }
+    .invitation-text {
+        font-size: 13px;
+        text-align: center;
+        font-weight: bold;
+        color: rgb(8, 8, 95);
+    }
+  }

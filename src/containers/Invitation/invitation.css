@@ -1,0 +1,87 @@
+.cardslide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.card-one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: transparent;
+    height: 100vh;
+    border: none;
+}
+
+.cardslide1 {
+    width: 550px;
+    height: 970px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.card-two {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    padding: 1rem;
+}
+
+.description {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.description1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.card-transaction {
+    width: 75%;
+    height: 40%;
+    background-color: rgb(112, 112, 183);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.card-transaction1 {
+    width: 60%;
+    height: 75%;
+    background-color: rgb(112, 112, 183);
+    padding: 5px;
+}
+
+
+/* invitation.css */
+
+
+/* Kontainer untuk mengatur overflow vertikal */
+
+.gallery-container {
+    max-height: 80vh;
+    /* Atur tinggi maksimum kontainer, sesuaikan sesuai kebutuhan */
+    overflow-y: auto;
+    /* Scroll vertikal jika konten melebihi tinggi kontainer */
+    padding: 10px 0;
+    /* Padding atas dan bawah untuk jarak dengan konten lainnya */
+}
+
+
+/* Gambar galeri dengan ukuran dan styling */
+
+.gallery-image {
+    width: 100%;
+    /* Lebar gambar mengikuti lebar kolom */
+    height: auto;
+    /* Menjaga proporsi gambar */
+    border-radius: 10px;
+    /* Radius border untuk sudut gambar */
+}
