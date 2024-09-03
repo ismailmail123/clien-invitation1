@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Button, Col, Form } from "react-bootstrap";
 import useRecipientStore from "../../store/useRecipientStore";
 import FromToken from "../../utils/auth";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const Modal1 = ({ isOpen, toggleModal, modalType }) => {
   const navigate = useNavigate();
@@ -289,10 +290,10 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
         <div className="div-close">
           <button
             style={{ marginTop: "-200px", marginRight: "-450px" }}
-            className="rounded-pill p-3 border-secondary"
+            className="rounded-pill border-secondary bg-light"
             onClick={toggleModal}
           >
-            {/* <img src={Icon} alt="Close" /> */}
+            <IoMdCloseCircleOutline className="text-dark fs-1"/>
           </button>
         </div>
         <div className="modal-1-modal">

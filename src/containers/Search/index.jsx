@@ -97,7 +97,7 @@ ______________________________
 Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:
 berikut link lengkap acara kami :
 
-https://invitation-wedding-nine.vercel.app/invitation/${recipient.id}
+https://invitation-one-mu.vercel.app/open/${recipient.id}
 
 merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i 
 berkenan untuk hadir dan memberikan do'a restu.
