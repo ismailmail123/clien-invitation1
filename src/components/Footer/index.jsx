@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className="bg-secondary">
+    <div className="bg-secondary mt-3">
       <Container className="p-3 d-flex gap-3 ">
         <Col lg={6}>
           <div className="footer-item">

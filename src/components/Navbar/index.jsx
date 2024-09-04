@@ -67,7 +67,8 @@ function OffcanvasExample() {
                 <Dropdown style={{marginLeft: "-250px"}}>
                   <Dropdown.Toggle 
                     variant="light" 
-                    className="bg-transparent border-0 p-0" 
+                    className="bg-transparent border-0 p-0 text-wrap" 
+                    style={{fontSize: "12px"}}
                     id="dropdown-basic"
                   >
                     {user[0].username}

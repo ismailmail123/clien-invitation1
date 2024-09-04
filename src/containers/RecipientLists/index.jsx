@@ -104,7 +104,7 @@ berkenan untuk hadir dan memberikan do'a restu.
                           {
                             recipient.status !== "terkirim" ? (
                               <div>
-                            <button className="p-0 lh-1 bg-transparent" onClick={() => handleMarkAsSent(recipient.id)}>Tandai sebagai Terkirim</button>
+                            <button className="p-0 lh-1 bg-transparent border-0" onClick={() => handleMarkAsSent(recipient.id)}>Tandai sebagai Terkirim</button>
                           </div>
                             ):(
                             <PiCheckLight className="text-success"  />

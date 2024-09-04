@@ -6,6 +6,7 @@ import { Button, Col, Form } from "react-bootstrap";
 import useRecipientStore from "../../store/useRecipientStore";
 import FromToken from "../../utils/auth";
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import Containt from "../../components/container";
 
 const Modal1 = ({ isOpen, toggleModal, modalType }) => {
   const navigate = useNavigate();
@@ -286,6 +287,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
 
   return (
     <>
+    
       <div className={`modal-1-overlay ${isOpen ? "open" : ""}`}>
         <div className="div-close">
           <button
@@ -388,7 +390,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                   </Button>
                 </>
               ) : (
-                <Button
+                   <Button
                   style={{ bottom: 0, position: "sticky" }}
                   variant="primary"
                   type="submit"
@@ -428,7 +430,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                   ref={fileInputRef}
                 />
               </Form.Group>
-              {imgPreview && (
+              {/* {imgPreview && (
                 <div className="image-preview">
                   <img
                     src={imgPreview}
@@ -436,7 +438,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                     className="img-fluid"
                   />
                 </div>
-              )}
+              )} */}
               {isSubmitting ? (
                 <>
                   <Button
@@ -479,7 +481,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                   ref={fileInputRef}
                 />
               </Form.Group>
-              {imgPreview && (
+              {/* {imgPreview && (
                 <div className="image-preview">
                   <img
                     src={imgPreview}
@@ -487,7 +489,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                     className="img-fluid"
                   />
                 </div>
-              )}
+              )} */}
               <Form.Group controlId="formBasicTitle">
                 <Form.Label>Gambar cover</Form.Label>
                 <Form.Control
@@ -498,7 +500,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                   ref={fileInputRef}
                 />
               </Form.Group>
-              {imgPreview && (
+              {/* {imgPreview && (
                 <div className="image-preview">
                   <img
                     src={imgPreview}
@@ -506,7 +508,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                     className="img-fluid"
                   />
                 </div>
-              )}
+              )} */}
               <Form.Group controlId="formBasicThem1">
                 <Form.Label>Tema Utama</Form.Label>
                 <Form.Select
@@ -553,7 +555,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                   </Button>
                 </>
               ) : (
-                <Button
+                   <Button
                   style={{ bottom: 0, position: "sticky" }}
                   variant="primary"
                   type="submit"
@@ -654,6 +656,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
           )}
         </div>
       </div>
+      
     </>
   );
 };

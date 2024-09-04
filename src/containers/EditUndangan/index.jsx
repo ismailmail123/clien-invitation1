@@ -26,7 +26,9 @@ const Index = () => {
 
   return (
     <>
-      <div className="bg-body-secondary" style={{ height: "100vh" }}>
+      <div className="bg-body-secondary" 
+      // style={{ height: "100vh" }}
+      >
         <Navbar />
 
         <Container>

@@ -1,6 +1,27 @@
+/* body {
+    background: #f8f9fb;
+    font-family: "Euclid Circular A", "Poppins";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+/* 
+* {
+    box-sizing: border-box;
+} */
+
 body {
     background: #f8f9fb;
     font-family: "Euclid Circular A", "Poppins";
+    display: grid;
+    place-items: center;
+    /* Memusatkan secara horizontal dan vertikal */
+    min-height: 100vh;
+    /* Memastikan body mengambil tinggi penuh halaman */
+    margin: 0;
+    /* Menghilangkan margin default pada body */
 }
 
 * {
@@ -23,7 +44,7 @@ body {
     justify-content: end;
     align-items: center;
     margin-top: -500px;
-    margin-left: -480px;
+    margin-left: -700px;
 }
 
 @keyframes overlay-in {
@@ -42,7 +63,8 @@ body {
 
 /* ok */
 
-.modal-1-overlay {
+
+/* .modal-1-overlay {
     z-index: 1;
     top: 0;
     left: 0;
@@ -51,6 +73,19 @@ body {
     background: rgb(0 0 0 / 75%);
     display: grid;
     place-items: center;
+} */
+
+.modal-1-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Latar belakang semi-transparan */
 }
 
 
@@ -58,6 +93,7 @@ body {
 
 .modal-1-overlay.open {
     visibility: visible;
+    /* width: 456px; */
     opacity: 1;
     animation: overlay-in 1s both;
 }
@@ -80,19 +116,26 @@ body {
 
 .modal-1-modal {
     z-index: 2;
-    width: 380px;
+    width: 250px;
     top: 50%;
     left: 50%;
     background: #ffffff;
     border-radius: 12px;
-    padding: 0 40px 50px;
+    padding: 5px 10px;
     translate: -50% -50%;
     box-shadow: 0 10px 30px rgb(0 0 0 / 24%);
-    max-height: 80vh;
-    /* Atur tinggi maksimum kontainer, sesuaikan sesuai kebutuhan */
+    max-height: 50vh;
     overflow-x: auto;
-    /* Scroll vertikal jika konten melebihi tinggi kontainer */
+    overflow-y: none;
 }
+
+
+/* .modal-1-modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+} */
 
 
 /* ok */
@@ -160,4 +203,27 @@ body {
 .modal-1-modal>p {
     color: #96939c;
     margin: 30px 0 0;
+}
+
+@media (max-width: 456px) {
+    .modal-1-overlay.open {
+        visibility: visible;
+        width: 450px;
+        opacity: 1;
+        animation: overlay-in 1s both;
+    }
+    .modal-1-modal {
+        z-index: 2;
+        width: 250px;
+        top: 35%;
+        left: 35%;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 5px 10px;
+        translate: -50% -50%;
+        box-shadow: 0 10px 30px rgb(0 0 0 / 24%);
+        max-height: 50vh;
+        overflow-x: auto;
+        overflow-y: none;
+    }
 }
