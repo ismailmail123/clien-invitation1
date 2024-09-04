@@ -8,7 +8,7 @@ AOS.init();
 import Clock from "../../containers/Clock/Clock";
 import dayjs from "dayjs";
 
-function Invitation({ wedding, data }) {
+function Invitation({ wedding, data, countDownDate }) {
   const [timerDays, setTimerDays] = useState(0);
   const [timerHours, setTimerHours] = useState(0);
   const [timerMinutes, setTimerMinutes] = useState(0);
@@ -17,11 +17,12 @@ function Invitation({ wedding, data }) {
   const intervalRef = useRef();
 
   const startTimer = () => {
-    const countDownDate = new Date("2024-09-15T00:00:00").getTime();
+    if (countDownDate) {
+      const targetDate = new Date(countDownDate).getTime();
 
     intervalRef.current = setInterval(() => {
       const now = new Date().getTime();
-      const distance = countDownDate - now;
+      const distance = targetDate - now;
 
       const days = Math.floor(distance / (24 * 60 * 60 * 1000));
       const hours = Math.floor(
@@ -39,6 +40,7 @@ function Invitation({ wedding, data }) {
         setTimerSeconds(seconds);
       }
     }, 1000);
+  }
   };
 
   useEffect(() => {
@@ -48,14 +50,15 @@ function Invitation({ wedding, data }) {
     };
   }, []); // Kosongkan dependency array agar hanya berjalan sekali saat komponen mount
 
+
   const formatTanggal = (dateString) => {
-    dayjs.locale("id"); // Set locale ke Bahasa Indonesia
-    return dayjs(dateString).format("dddd, DD MMMM YYYY");
-  };
-  // console.log("timer days", timerDays);
-  // console.log("timer days", timerHours);
-  // console.log("timer days", timerMinutes);
-  // console.log("timer days", timerSeconds);
+    dayjs.locale("id");
+    let formattedDate = dayjs(dateString).format("dddd, DD MMMM YYYY");
+    // Ganti "Minggu" dengan "Ahad"
+    formattedDate = formattedDate.replace("Minggu", "Ahad");
+    return formattedDate;
+};
+
   return (
     <>
       <div

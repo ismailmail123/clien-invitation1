@@ -43,6 +43,8 @@ function Invitation() {
     if (countDownDate) {
       const targetDate = new Date(countDownDate).getTime();
 
+      console.log("ini count down", countDownDate)
+
       interval = setInterval(() => {
         const now = new Date().getTime();
         const distance = targetDate - now;
@@ -350,7 +352,7 @@ function Invitation() {
   {data.user.wedding ? (
     <>
       <Slide1 wedding={data.user.wedding} data={data} user={data.user} />
-      <Slide2 wedding={data.user.wedding} data={data} />
+      <Slide2 wedding={data.user.wedding} data={data} countDownDate={countDownDate}/>
       <Slide3 data1={data} user={data.user} />
       <Slide4 data={data} />
       {/* Memeriksa apakah galeri ada dan tidak kosong */}
