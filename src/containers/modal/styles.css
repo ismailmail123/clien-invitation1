@@ -215,8 +215,8 @@ body {
     .modal-1-modal {
         z-index: 2;
         width: 350px;
-        top: 35%;
-        left: 15%;
+        top: 50%;
+        left: 35%;
         background: #ffffff;
         border-radius: 12px;
         padding: 5px 10px;
