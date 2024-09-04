@@ -84,7 +84,7 @@ const Index = () => {
                 fontFamily: "Dancing Script, cursive",
               }}
             >
-              Add Thems
+              Tambahkan Tema
             </h4>
             <Col xs="auto" className="colEditcar d-none d-md-block h-100"></Col>
           </div>
@@ -150,14 +150,29 @@ const Index = () => {
                     className="d-flex align-items-center me-3 btnCancel"
                     onClick={() => navigate(-1)}
                   >
-                    Cancel
+                    Batalkan
                   </Button>
+                  {isSubmitting ? (
+                <>
                   <Button
+                    className="d-flex align-items-center me-3 btnSave text-light"
+                    variant="primary"
                     type="submit"
-                    className="d-flex align-items-center text-white btnSave"
+                    disabled={isSubmitting}
                   >
-                    Save
+                    Diproses...
                   </Button>
+                </>
+              ) : (
+                   <Button
+                  className="d-flex align-items-center me-3 btnSave text-light"
+                  variant="primary"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  Simpan
+                </Button>
+              )}
                 </div>
               </div>
             </div>

@@ -386,7 +386,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                     type="submit"
                     disabled={isSubmitting}
                   >
-                    Loading...
+                    Diproses...
                   </Button>
                 </>
               ) : (
@@ -396,7 +396,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  Submit
+                  Kirim
                 </Button>
               )}
             </form>
@@ -447,7 +447,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                     type="submit"
                     disabled={isSubmitting}
                   >
-                    Loading...
+                    Diproses...
                   </Button>
                 </>
               ) : (
@@ -457,7 +457,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  Submit
+                  Kirim
                 </Button>
               )}
             </form>
@@ -551,7 +551,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                     type="submit"
                     disabled={isSubmitting}
                   >
-                    Loading...
+                    Diproses...
                   </Button>
                 </>
               ) : (
@@ -561,7 +561,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  Submit
+                  Kirim
                 </Button>
               )}
             </form>
@@ -586,7 +586,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                 />
               </Form.Group>
               <Form.Group controlId="formBasicCard">
-                <Form.Label>Nama Kartu</Form.Label>
+                <Form.Label>Nama Bank</Form.Label>
                 <Form.Select
                   name="title"
                   onChange={handleInsertChange}
@@ -610,14 +610,27 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
                   onChange={handleInsertChange}
                 />
               </Form.Group>
-              <Button
-                style={{ bottom: 0, position: "sticky" }}
-                variant="primary"
-                type="submit"
-                disabled={isSubmitting}
-              >
-                Submit
-              </Button>
+              {isSubmitting ? (
+                <>
+                  <Button
+                    style={{ bottom: 0, position: "sticky" }}
+                    variant="primary"
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
+                    Diproses...
+                  </Button>
+                </>
+              ) : (
+                   <Button
+                  style={{ bottom: 0, position: "sticky" }}
+                  variant="primary"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  Kirim
+                </Button>
+              )}
             </form>
           )}
           {modalType === "pengaturan" && (

@@ -82,8 +82,33 @@ const Index = () => {
                   </fieldset>
                 </div>
                 <div className="d-flex justify-content-center" style={{ marginTop: "40px" }}>
-                  <Button className='d-flex align-items-center me-3 btnCancel' onClick={() => navigate(-1)}>Cancel</Button>
-                  <Button type="submit" className='d-flex align-items-center text-white btnSave'>Save</Button>
+                <Button
+                    className="d-flex align-items-center me-3 btnCancel"
+                    onClick={() => navigate(-1)}
+                  >
+                    Batalkan
+                  </Button>
+                  {isSubmitting ? (
+                <>
+                  <Button
+                    className="d-flex align-items-center me-3 btnSave text-light"
+                    variant="primary"
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
+                    Diproses...
+                  </Button>
+                </>
+              ) : (
+                   <Button
+                  className="d-flex align-items-center me-3 btnSave text-light"
+                  variant="primary"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  Simpan
+                </Button>
+              )}
                 </div>
               </div>
             </div>
