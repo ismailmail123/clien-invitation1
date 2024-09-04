@@ -226,4 +226,11 @@ body {
         overflow-x: auto;
         overflow-y: none;
     }
+    .div-close {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        margin-top: -180px;
+        margin-left: -450px;
+    }
 }
