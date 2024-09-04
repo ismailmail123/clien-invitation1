@@ -102,8 +102,11 @@ function Invitation() {
 
   const formatTanggal = (dateString) => {
     dayjs.locale("id");
-    return dayjs(dateString).format("dddd, DD MMMM YYYY");
-  };
+    let formattedDate = dayjs(dateString).format("dddd, DD MMMM YYYY");
+    // Ganti "Minggu" dengan "Ahad"
+    formattedDate = formattedDate.replace("Minggu", "Ahad");
+    return formattedDate;
+};
 
   function capitalizeFirstLetter(text) {
     return text.charAt(0).toUpperCase() + text.slice(1);
