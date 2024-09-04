@@ -43,8 +43,8 @@ body {
     display: flex;
     justify-content: end;
     align-items: center;
-    margin-top: -500px;
-    margin-left: -700px;
+    margin-top: -300px;
+    margin-left: -600px;
 }
 
 @keyframes overlay-in {
@@ -216,7 +216,7 @@ body {
         z-index: 2;
         width: 250px;
         top: 35%;
-        left: 35%;
+        left: 20%;
         background: #ffffff;
         border-radius: 12px;
         padding: 5px 10px;
