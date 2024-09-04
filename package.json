@@ -16,6 +16,7 @@
     "react-audio-player": "^0.17.0",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-hook-form": "^7.45.2",
     "react-icon": "^1.0.0",
     "react-icons": "^4.12.0",

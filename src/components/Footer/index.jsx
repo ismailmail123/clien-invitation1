@@ -16,25 +16,25 @@ const Index = () => {
               style={{ fontFamily: "Dancing Script, cursive" }}
               className="fw-bold text-light mb-3"
             >
-              Contact
+              Kontak
             </h4>
             <p
               className="text-light"
               style={{ fontFamily: "Dancing Script, cursive" }}
             >
-              Alamat: Jl. Poros Kariango-Maros Sulawesi Selatan
+              Alamat : Jl. Poros Kariango-Maros Sulawesi Selatan
+            </p> 
+            <p
+              className="text-light"
+              style={{ fontFamily: "Dancing Script, cursive" }}
+            >
+              Email : ismailbary2@gmail.com
             </p>
             <p
               className="text-light"
               style={{ fontFamily: "Dancing Script, cursive" }}
             >
-              Email: ismailbary2@gmail.com
-            </p>
-            <p
-              className="text-light"
-              style={{ fontFamily: "Dancing Script, cursive" }}
-            >
-              Phone: +6285342545607
+              Cp : +6285342545607
             </p>
           </div>
         </Col>

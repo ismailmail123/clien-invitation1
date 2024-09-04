@@ -41,7 +41,7 @@ const Index = () => {
         <Navbar />
         <Container fluid className='p-0 m-0 containerEditCar'>
           <div className="m-0">
-            <h4 className='text-center fw-bold' style={{marginLeft: "50px", height: "100%",  fontFamily: "Dancing Script, cursive"}}>Add Recipient</h4>
+            <h4 className='text-center fw-bold' style={{marginLeft: "50px", height: "100%",  fontFamily: "Dancing Script, cursive"}}>Tambahkan Penerima</h4>
             <Col xs="auto" className='colEditcar d-none d-md-block h-100'></Col>
           </div>
           <Form onSubmit={handleAdd}>

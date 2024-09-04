@@ -4,10 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import brand from "../../assets/logo-undangan2.png";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import useRecipientStore from '../../store/useRecipientStore';
 import { useEffect, useState } from 'react';
-import Icon from "../../assets/avatar.jpg"
+import Icon from "../../assets/avatar.jpg";
+import axios from 'axios';
 
 function OffcanvasExample() {
 
@@ -16,6 +17,11 @@ function OffcanvasExample() {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [show, setShow] = useState(false);
+  const [data, setData] = useState();
+  const [title, setTitle] = useState("Invitation");
+  const [metaImage, setMetaImage] = useState("");
+  const [favicon, setFavicon] = useState("");
+  const {id} = useParams();
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -39,6 +45,43 @@ function OffcanvasExample() {
     logout();
     navigate("/");
   };
+
+ 
+    const getData = async () => {
+        try {
+            const response = await axios.get(`https://api-invitation.xyz/api/recipients/${id}`);
+            setData(response.data.data);
+            const datas = response.data.data;
+
+      if (datas && datas.user && datas.user.username) {
+        setTitle(`${datas.user.wedding.name} & ${datas.user.wedding.parthner_name}`);
+      }
+      
+      if (datas && datas.user && datas.user.profile_image) {
+        setMetaImage(datas.user.profile_image);
+        setFavicon(datas.user.profile_image);
+    }
+
+        } catch (err) {
+            console.log("Data tidak ditemukan", err);
+            setData([]);
+        }
+    };
+
+    function capitalizeFirstLetter(text) {
+        return text.charAt(0).toUpperCase() + text.slice(1);
+      }
+
+    useEffect(() => {
+        getData();
+    }, []);
+    useEffect(() => {
+        console.log("Meta image URL: ", metaImage); // Debug line
+    }, [metaImage]);
+
+    useEffect(() => {
+      document.title = title;
+    }, [title]);
 
   return (
     <>

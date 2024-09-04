@@ -20,6 +20,7 @@ import dayjs from "dayjs";
 import "dayjs/locale/id";
 import pengantin from "../../assets/pengantin-kartoon.png";
 import icon from "../../assets/wedding2.png";
+import { Helmet } from "react-helmet";
 
 function Invitation() {
   const [timerDays, setTimerDays] = useState(0);
@@ -29,6 +30,9 @@ function Invitation() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [data, setData] = useState();
   const [showModal, setShowModal] = useState(true);
+  const [title, setTitle] = useState("Invitation");
+  const [metaImage, setMetaImage] = useState(icon);
+  const [favicon, setFavicon] = useState(icon);
   const [countDownDate, setCountDownDate] = useState(null); // State untuk menyimpan tanggal pernikahan
 
   const audioRef = useRef(null);
@@ -90,6 +94,17 @@ function Invitation() {
       if (response.data.data.user.wedding.date) {
         setCountDownDate(response.data.data.user.wedding.date);
       }
+
+      const datas = response.data.data;
+
+      if (datas && datas.user && datas.user.username) {
+        setTitle(`${datas.user.wedding.name} & ${datas.user.wedding.parthner_name}`);
+      }
+      
+      if (datas && datas.user && datas.user.profile_image) {
+        setMetaImage(datas.user.profile_image);
+        setFavicon(datas.user.profile_image);
+    }
     } catch (err) {
       console.log("Data tidak ditemukan", err);
       setData([]);
@@ -117,6 +132,12 @@ function Invitation() {
 
   return (
     <>
+    <Helmet>
+        <link rel="icon" href={favicon} />
+                <title>{capitalizeFirstLetter(title)}</title>
+                <meta property="og:title" content={title} />
+                <meta property="og:image" content={metaImage} />
+            </Helmet>
       <Container
         className="m-0 fixed-bottom bg-success p-2 text-dark bg-opacity-75"
         style={{
@@ -178,7 +199,7 @@ function Invitation() {
             className="d-flex align-items-center gap-3 "
             style={{ border: "1px solid green", borderRadius: 10, padding: 10 }}
           >
-            <p>Apakah anda ingin mendengarkan musik !</p>
+            <p>Apakah anda tidak ingin mendengarkan musik !</p>
             <Button
               onClick={togglePlayPause}
               variant="light"
