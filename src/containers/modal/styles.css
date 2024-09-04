@@ -43,7 +43,7 @@ body {
     display: flex;
     justify-content: end;
     align-items: center;
-    margin-top: -250px;
+    margin-top: -300px;
     margin-left: -500px;
 }
 
@@ -216,7 +216,7 @@ body {
         z-index: 2;
         width: 350px;
         top: 50%;
-        left: 35%;
+        left: 50%;
         background: #ffffff;
         border-radius: 12px;
         padding: 5px 10px;
