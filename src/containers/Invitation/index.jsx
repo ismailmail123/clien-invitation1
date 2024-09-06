@@ -92,10 +92,12 @@ function Invitation() {
       const response = await axios.get(`https://api-invitation.xyz/api/recipients/${id}`);
       setData(response.data.data);
 
-      // Ambil tanggal pernikahan dari data API dan set sebagai countDownDate
       if (response.data.data.user.wedding.date) {
-        setCountDownDate(response.data.data.user.wedding.date);
+        // Format tanggal menjadi hanya "YYYY-MM-DD"
+        const formattedDate = dayjs(response.data.data.user.wedding.date).format("YYYY/MM/DD");
+        setCountDownDate(formattedDate);
       }
+
 
       const datas = response.data.data;
 
